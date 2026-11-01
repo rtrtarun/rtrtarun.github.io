@@ -37,7 +37,7 @@ Everything is in [content.js](content.js):
 | --- | --- |
 | `name`, `role`, `tagline`, `about` | Hero and About text |
 | `photo` | Portrait path (`assets/tarun.jpg`) |
-| `resumeUrl` | Resume file (`resume.pdf`) |
+| `resumeUrl` | Resume file (`resume_sde_detailed.pdf`) |
 | `links` | Email, LinkedIn, GitHub, Credly |
 | `contact` | Role, location, availability, form reasons and `formUrl` |
 | `bookCallUrl` | Calendly or Google Calendar link (empty hides the button) |
@@ -45,7 +45,7 @@ Everything is in [content.js](content.js):
 | `experience`, `projects` | Work and personal projects |
 | `certifications`, `education` | Credentials (an empty list hides the section) |
 
-To replace the resume, overwrite `resume.pdf`. To replace the photo, overwrite `assets/tarun.jpg`.
+To replace the resume, overwrite `resume_sde_detailed.pdf`. To replace the photo, overwrite `assets/tarun.jpg`.
 
 ## Contact form setup (Google Sheet and email)
 
@@ -71,7 +71,7 @@ Protection: the script validates and length-limits every field, ignores submissi
 ├── script.js           # Builds the page from content.js
 ├── features.js         # Colour themes, contact form, Book a call
 ├── styles.css          # Layout, themes, print styles
-├── resume.pdf
+├── resume_sde_detailed.pdf
 ├── assets/
 │   └── tarun.jpg
 └── integrations/

@@ -1,14 +1,14 @@
 // Edit this file to update the whole site. Empty period/education/certifications are hidden; TODO marks things to fill in.
 window.PORTFOLIO = {
   "name": "Tarun Rongali",
-  "role": "Software Engineer",
-  "tagline": "Full-stack engineer with a backend focus, now building AI agent and evaluation platforms.",
+  "role": "AI Engineer",
+  "tagline": "Backend engineer turned AI engineer: agents, MCP, RAG, evals and observability.",
   "about": [
-    "Software engineer with about 4 years of experience building scalable backends and cloud-native systems in Go, Java (Spring Boot, Hibernate), Node.js and TypeScript. I work with SQL and NoSQL stores (MySQL, MongoDB, DynamoDB) and deliver event-driven, serverless workflows on AWS (Lambda, ECS, Step Functions, S3, Kinesis).",
-    "Most recently I have been on O-Series (tax determination, configuration side) for Vertex: the AuthZ custom roles integration, REST V3 APIs with a reusable AST-based filtering framework, shared OpenTelemetry/Datadog observability, DB-Agent, and a move into AI engineering. Before that I worked with WBD on a digital supply chain monitoring platform and an OTT recommendation engine.",
-    "I write clean, testable code, automate unit, integration and end-to-end tests, and ship in Agile teams."
+    "AI engineer with about 4 years of experience building agentic systems, RAG and LLM platforms on top of a strong backend base in Python, Go, Java (Spring Boot), Node.js and TypeScript. I work with SQL and NoSQL stores (PostgreSQL, MongoDB, DynamoDB) and deliver event-driven, cloud-native systems on AWS and Azure.",
+    "Most recently at Vertex I have worked on an agent evaluation platform, the internal agents platform (Vapor), and DB-Agent, which I own end to end, alongside earlier O-Series work on AuthZ custom roles, REST V3 APIs and shared OpenTelemetry/Datadog observability. Before that I worked with WBD on a digital supply chain platform (including a RAG assistant) and an OTT recommendation engine.",
+    "My degree is a B.Tech in Mechanical Engineering from IIT Bhubaneswar (2021); I moved into software early in my career and have worked across the full SDLC on microservices, event-driven architectures, AWS and CI/CD automation. I focus on system performance, reliability and developer efficiency, work closely with cross-functional teams, and ship clean, testable code in Agile teams."
   ],
-  "resumeUrl": "resume.pdf",
+  "resumeUrl": "resume_sde_detailed.pdf",
   "photo": "assets/tarun.jpg",
   "bookCallUrl": "",
   "skillInfo": {
@@ -44,6 +44,8 @@ window.PORTFOLIO = {
     "Datadog": { "what": "A monitoring platform that shows metrics, logs and traces in one place.", "like": "A control-room dashboard for your whole system." },
     "RAG": { "what": "Retrieval-augmented generation: the model looks up relevant documents before answering.", "like": "An open-book exam instead of answering from memory." },
     "MCP": { "what": "Model Context Protocol, a standard way for AI models to use tools and data sources.", "like": "A universal plug that lets any AI connect to any tool." },
+    "LangGraph": { "what": "A framework for building stateful, multi-step agents as graphs of steps.", "like": "A flowchart the agent actually follows, with save points." },
+    "Langfuse": { "what": "Tracing, scoring and cost tracking for LLM applications.", "like": "A flight recorder plus a receipt for every agent run." },
     "LLM evaluation": { "what": "Measuring how good, safe and consistent a language model's answers are.", "like": "Marking a student's answers against an answer key." }
   },
   "contact": {
@@ -55,7 +57,7 @@ window.PORTFOLIO = {
       "Knowledge sharing",
       "Just saying hi"
     ],
-    "role": "AI Developer 👨‍💻",
+    "role": "AI Engineer 👨‍💻",
     "location": "India",
     "openToWork": true
   },
@@ -68,25 +70,28 @@ window.PORTFOLIO = {
   },
   "keywords": [
     "AI Agents",
-    "LLM Evaluation",
+    "MCP",
     "RAG",
-    "Go",
-    "Java",
-    "Node.js",
-    "AWS",
+    "LLM Evaluation",
+    "LangGraph",
+    "Langfuse",
+    "Python",
+    "Azure",
+    "Terraform",
     "Observability"
   ],
   "skills": {
     "Languages": [
-      "Go",
+      "Python",
       "Java",
+      "Go",
       "TypeScript",
       "JavaScript",
       "Node.js",
-      "Python",
       "SQL"
     ],
     "Frameworks & Web": [
+      "FastAPI",
       "Spring Boot",
       "Hibernate",
       "React",
@@ -118,6 +123,7 @@ window.PORTFOLIO = {
     "Observability & CI/CD": [
       "OpenTelemetry",
       "Datadog",
+      "Langfuse",
       "AWS CloudWatch",
       "GitHub Actions",
       "Maven",
@@ -143,22 +149,36 @@ window.PORTFOLIO = {
     "AI": [
       "AI agent development",
       "Agentic workflows",
+      "LangGraph",
+      "deepagents",
+      "LangChain",
+      "MCP",
+      "Human-in-the-loop",
+      "Guardrails",
+      "RAG",
+      "Hybrid retrieval",
+      "Reranking",
+      "ChromaDB",
+      "Prompt engineering",
+      "LLM evaluation",
+      "LLM-as-a-Judge",
+      "DeepEval",
+      "Ragas",
+      "FinOps",
       "Claude",
       "Claude Code",
-      "RAG",
-      "Prompt engineering",
-      "MCP",
-      "LLM evaluation"
+      "Azure OpenAI",
+      "AWS Bedrock"
     ]
   },
   "experience": [
     {
-      "title": "Software Engineer",
+      "title": "Application Development Senior Analyst",
       "org": "Accenture",
-      "client": "Vertex",
-      "team": "O-Series · Tax Determination (Configuration)",
+      "client": "Vertex GCC",
+      "team": "O-Series · Tax Determination (Configuration) + AI CoE",
       "location": "",
-      "period": "",
+      "period": "Oct 2025 - Present",
       "summary": "Worked on the configuration side of O-Series tax determination: observability, REST V3 APIs, and later internal AI platform work.",
       "items": [
         {
@@ -177,6 +197,8 @@ window.PORTFOLIO = {
           "details": [],
           "highlights": [
             "Led the architecture and gap analysis across the library, API service and infrastructure.",
+            "Automated agent quality checks on pull requests with a DeepEval + Ragas harness and an LLM-as-a-Judge wrapper: structured JSON handling that prevents NaN scores, retries, concurrency and result caching in GitHub Actions.",
+            "Benchmarked a frontier model against an open-source model on the same evaluation suite across quality, latency and cost to inform model selection.",
             "Verified every design claim against the code, and recorded 25 conflicts and open decisions.",
             "Found the true root cause of a run-save failure and corrected the team's assumption.",
             "Designed the REST API, the registration flow and the authentication approach.",
@@ -227,11 +249,44 @@ window.PORTFOLIO = {
             "Helped build the internal platform that lets teams deploy and run AI agents at Vertex, rather than each team wiring up its own tooling. I scoped the architecture and delivery path, surfacing ownership, infrastructure and SDK-coupling risks before implementation started.",
             "Agents can be configured with a prompt, a schedule and the model the team wants, and the platform runs them and records what happened so results can be compared."
           ],
+          "story": [
+            {
+              "h": "The problem",
+              "t": "Every team that wanted an AI agent was wiring up its own runtime, its own tool access and its own cost tracking. That meant no shared safety rules, no record of what an agent did, and no way to compare agents or models."
+            },
+            {
+              "h": "My role",
+              "t": "I scoped the architecture and delivery path, surfaced ownership, infrastructure and SDK-coupling risks before implementation started, and built the Azure infrastructure and CI/CD around it. For the wider platform I contributed rather than owned."
+            },
+            {
+              "h": "What the platform does",
+              "t": "One async FastAPI service in front of one PostgreSQL database stores agents as signed, immutable, content-hashed versions and runs them in-process on LangGraph and deepagents. It governs every tool call, holds the MCP registry and credential vault, and reports to Langfuse and Datadog."
+            },
+            {
+              "h": "Safety and governance",
+              "t": "Three autonomy levels and a policy matrix decide whether a tool call runs, pauses for a human, or is refused, and every decision is an audited record. PII redaction, a prompt-injection guard and schema-enforced output sit around the model."
+            },
+            {
+              "h": "Tools, cost and quality",
+              "t": "An approval-gated MCP registry scans tools for risky behaviour. A sticky selector sends only the top 5 tool schemas per turn to save context. Cost per run is tracked with cached-token pricing and tenant budgets, and a scorecard rates agents against 10 readiness standards."
+            },
+            {
+              "h": "My infrastructure work",
+              "t": "Terraform and Terragrunt modules (PostgreSQL, Blob Storage, Cosmos DB, Log Analytics, federated credentials) for dev and prod, reusable build, test and security-scan workflows, Helm promotion, and a Key Vault plus External Secrets Operator flow."
+            },
+            {
+              "h": "Honest limits",
+              "t": "There is no real code-execution sandbox for agents, and budget enforcement is advisory for now. I also found deep coupling to an internal SDK and proposed removing it or replacing it with a deliberate no-op."
+            }
+          ],
           "highlights": [
-            "Agent deployment: teams deploy agents using scheduled prompts and their choice of model.",
-            "MCP and connector access: agents get tools and data through MCP servers and connectors.",
+            "Standardised agent deployment: an async FastAPI + PostgreSQL service runs agents in-process on LangGraph and deepagents as HMAC-signed, content-hashed immutable versions with verify-on-read.",
+            "Containment: 3 autonomy levels, a 5-class policy matrix (read, publish, write, unknown, destructive), human approve/edit/reject and an audited record for every decision.",
+            "Safety: input/output PII redaction, a blocking prompt-injection guard, forbidden tool parameters and JSON-schema-enforced output.",
+            "Approval-gated MCP registry with risk scanning across 5 categories (shell, file write, exfiltration, credential access, injection), 5 hosted connectors (GitHub, Jira, Confluence, Datadog, Snowflake) and an OpenAPI-to-MCP connector factory.",
+            "Context and cost: a sticky selector sends only the top-5 relevant tool schemas per turn; per-run cost uses cached-token pricing, effective-dated model prices and tenant budgets with a kill switch.",
             "Agent telemetry with Langfuse and FinOps integration, so every run has traces and cost attached.",
-            "Evals and datasets: curated datasets and criteria-based scoring of agent runs, which supports A/B testing of prompts and models.",
+            "Scorecard: agents are scored against 10 Agent Readiness Standards by combining a static score, observed runtime rules and conformance cases (for example, L2 pauses on write), feeding trust tiers.",
             "Infrastructure: Terraform modules (Blob Storage, Cosmos DB, GitHub federated credentials, Log Analytics, PostgreSQL) wired through Terragrunt for dev and prod.",
             "CI/CD: reusable build, test, security-scan and code-quality workflows, with a Helm chart published to a promotions repo.",
             "Secrets: Key Vault storage for an API bearer token, External Secrets Operator discovery tags, and secure propagation through GitHub Actions.",
@@ -281,7 +336,7 @@ window.PORTFOLIO = {
           ]
         },
         {
-          "title": "REST V3 API Modernisation (GOS2)",
+          "title": "REST V3 API Modernisation",
           "summary": "High-priority V3 APIs in TaxConfigAPI, and a reusable AST-based filtering framework for list and search.",
           "tags": [
             "Java",
@@ -294,6 +349,28 @@ window.PORTFOLIO = {
           "details": [
             "Delivered several high-priority REST V3 APIs in TaxConfigAPI, including Flex Fields, Tax Mappings and Tax Drivers. The work covered feature development, data model alignment, search enhancements, customer and vendor improvements, bug resolution and consistency across entities."
           ],
+          "story": [
+            {
+              "h": "The problem",
+              "t": "The older tax configuration APIs had inconsistent contracts and each endpoint implemented its own list and search filtering, which made every new entity slower and riskier to add."
+            },
+            {
+              "h": "What I delivered",
+              "t": "High-priority V3 APIs in TaxConfigAPI: Flex Fields, Tax Mappings (create and get-by-ID with reusable resolvers and ID-based customer and vendor caching) and Tax Drivers (OpenAPI contracts, create flow, partition-aware authorisation, uniqueness checks and audit logging)."
+            },
+            {
+              "h": "The filtering framework",
+              "t": "I proposed and built a reusable AST-based filter layer. A filter expression is parsed into a tree supporting AND, OR, nested parentheses, equality, IN and contains, then applied the same way for every entity. NOT and more operators can be added without touching endpoints. I also raised the GraphQL versus REST filtering trade-off."
+            },
+            {
+              "h": "Quality",
+              "t": "JUnit and Karate suites cover positive and negative scenarios. In review I caught a null-party dereference and a taxpayer-required contract mismatch before release."
+            },
+            {
+              "h": "Why it matters",
+              "t": "Future V3 entities adopt one shared filtering layer with little effort, and the APIs behave consistently across entities. I reviewed and demoed the work in sprint discussions."
+            }
+          ],
           "highlights": [
             "Tax Drivers: OpenAPI contracts and the create flow with partition-aware authorisation, validation, uniqueness checks and audit logging.",
             "Tax Mappings: create and get-by-ID, with reusable resolvers for parties, categories, drivers, impositions, flex fields and filing categories.",
@@ -305,12 +382,13 @@ window.PORTFOLIO = {
         },
         {
           "title": "DB-Agent",
-          "summary": "Database intelligence platform: schema extraction, code-to-table mapping, grounded RAG Q&A and MCP tools. I owned it end to end.",
+          "summary": "Database and repository intelligence platform: schema extraction, code-to-table mapping, grounded hybrid RAG, text-to-SQL and 17 MCP tools. I owned it end to end.",
           "tags": [
             "Python",
-            "Streamlit",
+            "FastAPI",
             "PostgreSQL",
             "ChromaDB",
+            "LangGraph",
             "RAG",
             "MCP",
             "SQLGlot"
@@ -318,13 +396,50 @@ window.PORTFOLIO = {
           "details": [
             "DB-Agent helps engineers understand large, unfamiliar databases: how the schema fits together, which code touches which tables, and what a query really does. I owned it end to end, from architecture and specs to prototyping, development, testing strategy and roadmap."
           ],
+          "story": [
+            {
+              "h": "The problem",
+              "t": "Engineers joining a large, unfamiliar database spend days working out how the schema fits together, which code touches which tables, and what a change would break. Generic chatbots guess; this needed answers backed by evidence."
+            },
+            {
+              "h": "My role",
+              "t": "I own DB-Agent end to end: architecture, specs, prototyping, development, testing strategy and roadmap. It is a Python 3.11 and FastAPI service with a React Native client; the earlier Streamlit portal was removed."
+            },
+            {
+              "h": "Architecture",
+              "t": "Entry points (FastAPI, MCP, the client) feed an orchestrator that routes intent and records a uniform trace, then call separate RAG, SQL, diagram, lineage and code-intelligence engines. Boundaries are enforced: RAG never imports SQL, database access is read-only, and MCP output stays protocol-pure."
+            },
+            {
+              "h": "Grounded retrieval",
+              "t": "Typed chunks are searched with TF-IDF and ChromaDB vectors, merged with Reciprocal Rank Fusion and reranked with a cross-encoder, within a context budget. Answers use evidence only: ungrounded questions are refused, and every endpoint-to-table mapping carries a confidence score and evidence reference."
+            },
+            {
+              "h": "Text-to-SQL and safety",
+              "t": "A schema linker, synthesizer and validator generate SQL with up to 2 self-correction retries, and the SQL is never executed. A sqlglot analyser flags SELECT *, missing WHERE on updates and deletes, and cartesian joins."
+            },
+            {
+              "h": "Agents and MCP",
+              "t": "17 versioned MCP tools, 8 for schema, SQL, diagrams and lineage and 9 for repository intelligence, plus an 11-endpoint REST bridge with request-ID tracing, bearer auth and rate limiting. A LangGraph planner/critic path runs over a read-only tool registry, behind a flag and failing open to the deterministic loop, gated by a golden-question evaluation harness."
+            },
+            {
+              "h": "Scale",
+              "t": "A monorepo of about 30K files used to need 6+ GB and hours. Directory pruning, a 2 MB file cap and an inverted-index linker with a document-frequency filter bring it to 284 s at about 250 MB peak."
+            },
+            {
+              "h": "Honest status",
+              "t": "Only PostgreSQL is implemented; MySQL and MSSQL are stubs. Metadata-first filters are planned, and it is a strong foundation rather than customer-ready for tax-intelligence scenarios yet."
+            }
+          ],
           "highlights": [
             "Modular architecture: schema engine, intelligence engine, SQL analyzer, diagram engine and RAG engine behind an agent orchestrator with intent routing and request tracing.",
-            "Hybrid RAG pipeline (TF-IDF plus vector search in ChromaDB) that answers with grounding and an extractive fallback.",
+            "Cut monorepo analysis from 6+ GB and hours to 284 s at about 250 MB peak for about 30K files, using directory pruning, a 2 MB file cap and an inverted-index linker.",
+            "Hybrid retrieval (TF-IDF plus ChromaDB vectors, Reciprocal Rank Fusion, cross-encoder reranking, pluggable embeddings) with context-window budgeting, targeting 2 s P95 retrieval; answers are grounded with an extractive fallback.",
             "Code intelligence that maps REST endpoints to database tables, with confidence scores and evidence.",
             "PostgreSQL schema extraction into a canonical model, plus ER diagram and lineage graph generation.",
             "SQL analysis that flags anti-patterns such as SELECT * and missing WHERE clauses.",
-            "MCP server with 8+ JSON-RPC tools so other tools and Copilot-style assistants can use it.",
+            "17 versioned MCP tools and an 11-endpoint FastAPI bridge with request-ID tracing, bearer auth and rate limiting, so Copilot, CI and a React Native client can use it.",
+            "Text-to-SQL with schema linking, validator-driven self-correction (2 retries), LRU caching and an audit log; generated SQL is never executed.",
+            "LangGraph planner/critic path over a read-only tool registry with bounded iterations, a feature flag and fail-open to the deterministic loop, gated by a golden-question evaluation harness.",
             "Scaled the repository analysis to monorepos of about 30k files with bounded memory.",
             "Spec-first development with contract validation and test traceability; groundwork for a multi-agent design."
           ]
@@ -342,6 +457,28 @@ window.PORTFOLIO = {
           "details": [
             "Started with a full-stack proof of concept covering backend services, Kubernetes workloads and browser apps, then productised it into a reusable shared library."
           ],
+          "story": [
+            {
+              "h": "The problem",
+              "t": "Customer issues in O-Series were slow to triage because logs, metrics and traces were not correlated, and each service instrumented itself differently."
+            },
+            {
+              "h": "What I built",
+              "t": "I started with a full-stack proof of concept across backend services, Kubernetes workloads and browser apps, then turned it into a shared Java telemetry API with a Maven BOM and publishing automation, and migrated existing OpenTelemetry calls onto it."
+            },
+            {
+              "h": "Enrichment",
+              "t": "Runtime attributes from system properties or environment variables are added to every trace. Customer context (pod and partition mapped to a client name) goes into cloud logs through SLF4J MDC, switched off by default with no change for On-Prem or On-Demand and no measurable regression."
+            },
+            {
+              "h": "Validation",
+              "t": "I validated logs, spans and custom metrics with log-to-trace correlation in Datadog for CDT and a Tax Config bulk update, and demoed it to the team."
+            },
+            {
+              "h": "Targets",
+              "t": "The programme aims for 15% lower MTTR, 15% faster issue detection and 50% more custom traces and metrics. These are programme targets, not results I measured myself."
+            }
+          ],
           "highlights": [
             "Built a shared Java telemetry API, a Maven BOM and publishing automation; migrated existing instrumentation onto it.",
             "Validated logs, metrics and traces with log-to-trace correlation in a cloud environment, and demoed it to the team.",
@@ -353,14 +490,35 @@ window.PORTFOLIO = {
       ]
     },
     {
-      "title": "Software Engineer",
+      "title": "Application Development Senior Analyst",
       "org": "Accenture",
       "client": "Warner Bros. Discovery (WBD)",
       "team": "Digital Supply Chain Overview",
-      "location": "",
-      "period": "",
-      "summary": "Built event-driven AWS services and monitoring tooling that give teams visibility into the digital content supply chain.",
+      "location": "Hyderabad, Telangana",
+      "period": "Feb 2024 - Oct 2025",
+      "summary": "A discovery and traceability platform for the global media supply chain, giving one view of the data and event information provided by many systems and destinations. I built event-driven AWS services and monitoring tooling for it, contributing across the full SDLC from requirements gathering to production deployment through CI/CD, in Agile Scrum teams using Jira.",
       "items": [
+        {
+          "title": "Event-driven Microservices & Integrations",
+          "summary": "Serverless and containerised services that connect many applications and improve cross-team observability.",
+          "tags": ["Node.js", "TypeScript", "Java", "Go", "MongoDB", "AWS Lambda", "AWS SAM", "ECS", "EC2", "S3"],
+          "details": [
+            "Built and deployed event-driven microservices in Java, Go, Node.js and TypeScript on AWS Lambda (with AWS SAM), ECS and EC2, backed by MongoDB, to integrate multiple applications and improve cross-team observability.",
+            "Designed architectures that integrate databases and SDS, integrated third-party APIs, and wrote custom Node.js scripts to correct and transform data against changing requirements."
+          ],
+          "story": [
+            { "h": "The problem", "t": "The supply chain data came from many systems and destinations, each with its own events. Teams had no single view, and fixing bad data meant ad hoc scripts." },
+            { "h": "What I built", "t": "Event-driven microservices that bring those systems together, using serverless workflows on Lambda and SAM where the load was spiky and ECS or EC2 where services needed to run continuously. I integrated third-party APIs and wrote Node.js transformation scripts to correct data to dynamic requirements." },
+            { "h": "Scope", "t": "Work ranged from small utilities to large backend API services, always on cloud-native, scalable architecture, with services managed for high availability and operational resilience." },
+            { "h": "How we worked", "t": "Requirements gathering through end-to-end development, complex bug fixes, unit tests and production deployment via CI/CD, with sprint planning and issue tracking in Jira under Scrum." }
+          ],
+          "architecture": {"steps": ["Source applications and third-party APIs", "Events", "Lambda (AWS SAM) and ECS or EC2 services", "MongoDB", "Cross-team observability"], "note": "Serverless where load is spiky, containers where services run continuously."},
+          "highlights": [
+            "Improved cross-team observability by integrating many applications through events.",
+            "Contributed to the full SDLC, from requirements to production deployment through CI/CD.",
+            "Planned and delivered iteratively in Scrum with Jira."
+          ]
+        },
         {
           "title": "Data Archiving Pipeline",
           "summary": "Automated archiving of historical data from MongoDB to S3.",
@@ -373,6 +531,21 @@ window.PORTFOLIO = {
           "details": [
             "Built an automated archiving workflow with AWS Step Functions that moves historical data to S3 and keeps MongoDB collections lean."
           ],
+          "story": [
+            {
+              "h": "The problem",
+              "t": "Historical records kept piling up in MongoDB, slowing queries and forcing a manual clean-up that took about 20 hours every quarter."
+            },
+            {
+              "h": "What I built",
+              "t": "An AWS Step Functions workflow that selects old data, writes it to S3 and then removes it from the collections, with each step retryable and visible."
+            },
+            {
+              "h": "Result",
+              "t": "1.8 million records were removed from MongoDB collections and the manual effort of about 20 hours every three months disappeared."
+            }
+          ],
+          "architecture": {"steps": ["MongoDB collections", "Step Functions workflow", "Amazon S3 archive", "Records removed from MongoDB"], "note": "Historical records are archived to S3 first, then removed, keeping collections lean."},
           "highlights": [
             "Removed 1.8 million records from MongoDB collections.",
             "Saves about 20 hours of manual data removal every three months."
@@ -390,6 +563,21 @@ window.PORTFOLIO = {
           "details": [
             "Turned one-off data-correction scripts into a reusable backfill API driven by defined requirements."
           ],
+          "story": [
+            {
+              "h": "The problem",
+              "t": "Whenever data needed correcting, someone wrote a one-off script, ran it by hand and hoped it was right, costing about 20 hours each time."
+            },
+            {
+              "h": "What I built",
+              "t": "A reusable backfill API in Node.js and TypeScript driven by defined requirements, so a correction becomes a request with known inputs rather than a new script."
+            },
+            {
+              "h": "Result",
+              "t": "About 20 hours saved every time a backfill is needed, with a repeatable and reviewable process."
+            }
+          ],
+          "architecture": {"steps": ["Backfill request with defined requirements", "Reusable API (Node.js, TypeScript)", "Transform and correct data", "MongoDB"], "note": "Replaces one-off correction scripts with a single repeatable entry point."},
           "highlights": [
             "Saves about 20 hours of manual effort every time a backfill is needed."
           ]
@@ -407,6 +595,21 @@ window.PORTFOLIO = {
             "Designed and built the Tags API from scratch. It started on AWS Lambda and moved to ECS with sqs-consumer for reliable queue polling.",
             "Supports creating and deleting tags at global, group and individual level."
           ],
+          "story": [
+            {
+              "h": "The problem",
+              "t": "During launches and hypercare, teams needed to mark offerings at global, group and individual level so problem events stood out immediately."
+            },
+            {
+              "h": "What I built",
+              "t": "I designed and built the API from scratch. It began on AWS Lambda and moved to ECS with sqs-consumer for reliable queue polling when Lambda's limits stopped fitting the workload."
+            },
+            {
+              "h": "Result",
+              "t": "It helped identify 100% of problematic events in real time, speeding up detection and mitigation."
+            }
+          ],
+          "architecture": {"steps": ["Tag request (global, group or individual)", "SQS queue", "ECS service with sqs-consumer", "Tag added or deleted"], "note": "The first version ran on AWS Lambda; it moved to ECS with sqs-consumer for reliable queue polling."},
           "highlights": [
             "Helped identify 100% of problematic events in real time, speeding up issue detection and mitigation."
           ]
@@ -424,6 +627,21 @@ window.PORTFOLIO = {
           "details": [
             "A Go application on ECS that consumes audit messages from Kafka Cloud, deserialises the Protobuf payloads to JSON and publishes them to an SNS topic."
           ],
+          "story": [
+            {
+              "h": "The problem",
+              "t": "Audit messages lived on Kafka as Protobuf, which downstream consumers could not read directly."
+            },
+            {
+              "h": "What I built",
+              "t": "A Go service on ECS that consumes from Kafka Cloud, deserialises the Protobuf payloads to JSON and publishes them to an SNS topic."
+            },
+            {
+              "h": "Result",
+              "t": "Audit data reaches the downstream ecosystem in a format every consumer can use."
+            }
+          ],
+          "architecture": {"steps": ["Kafka Cloud", "Go service on ECS", "Protobuf deserialised to JSON", "SNS topic", "DISCO ecosystem"], "note": "Relays audit messages from Kafka into the downstream ecosystem."},
           "highlights": [
             "Protobuf to JSON transformation.",
             "Delivers audit data to the downstream ecosystem."
@@ -441,9 +659,36 @@ window.PORTFOLIO = {
           "details": [
             "Contributed to the Change Data Capture service that streams real-time MongoDB changes to AWS Kinesis streams."
           ],
+          "story": [
+            {
+              "h": "The problem",
+              "t": "The service that streams MongoDB changes to Kinesis was running on an ageing Java version and an old Debezium release."
+            },
+            {
+              "h": "What I did",
+              "t": "I led the upgrade to Java 17 and migrated Debezium to its latest stable version."
+            },
+            {
+              "h": "Result",
+              "t": "Better compatibility, security and reliability while real-time change streaming kept working."
+            }
+          ],
+          "architecture": {"steps": ["MongoDB change stream", "Debezium", "Java 17 CDC service", "AWS Kinesis streams"], "note": "Streams real-time data changes to the appropriate Kinesis stream."},
           "highlights": [
             "Led the upgrade to Java 17.",
             "Migrated Debezium to its latest stable version for compatibility, security and reliability."
+          ]
+        },
+        {
+          "title": "ELS (Executive Live Stream)",
+          "summary": "A live view of supply chain status for executives, built with Java, React and MongoDB.",
+          "tags": ["Java", "React", "MongoDB"],
+          "details": [
+            "Worked on ELS (Executive Live Stream), a live view for executives built with Java, React.js and MongoDB."
+          ],
+          "architecture": {"steps": ["React.js front end", "Java backend", "MongoDB"], "note": "A three-tier live view for executives."},
+          "highlights": [
+            "Full-stack work across a Java backend, a React.js front end and MongoDB."
           ]
         },
         {
@@ -458,9 +703,37 @@ window.PORTFOLIO = {
             "A natural-language feature that answers questions like \"Why is video delivery still pending?\", and summarises status at overall, delivery and video-delivery levels.",
             "It analyses blockers, explains status codes, surfaces related tickets and Slack discussions from the knowledge base, and points users to the right team to contact."
           ],
+          "story": [
+            {
+              "h": "The problem",
+              "t": "Support staff spent a long time working out why an offering was delayed, reading status codes, tickets and Slack threads."
+            },
+            {
+              "h": "What I built",
+              "t": "My first GenAI feature: a natural-language assistant on AWS Bedrock with RAG over the status dictionary, related tickets and Slack discussions. It answers questions like \"Why is video delivery still pending?\" and summarises status at overall, delivery and video-delivery levels."
+            },
+            {
+              "h": "Summaries at different levels",
+              "t": "Different support groups own different parts of the supply chain, so someone may only care about video delivery. The assistant gives summaries at overall, delivery and video-delivery level, using text summarisation, prompt engineering and RAG to pull in existing descriptions from the status dictionary."
+            },
+            {
+              "h": "Analysing what is blocking delivery",
+              "t": "Beyond summarising, it works out what is preventing an offering from being delivered: blockers, issues with upstream dependencies such as open tickets for known problems with workarounds, and the meaning behind a status code and its detail. It also explains non-status data and where it comes from."
+            },
+            {
+              "h": "Tickets and who to contact",
+              "t": "It surfaces open tickets related to the offering, pulls relevant ticket and Slack snippets from the knowledge base, and identifies the team or point of contact to reach. The offering summary is designed to become a feature of that broader knowledge base."
+            },
+            {
+              "h": "Result",
+              "t": "It explains blockers, recommends fixes and points users to the right team, reducing support investigation time by about 40%."
+            }
+          ],
+          "architecture": {"steps": ["User question in natural language", "Prompt engineering and RAG retrieval", "Status dictionary, tickets and Slack", "LLM on AWS Bedrock", "Summary, blockers, fixes and point of contact"], "note": "Retrieval grounds the answer in existing status descriptions and discussions."},
           "highlights": [
-            "Text summarisation and RAG over the status dictionary.",
-            "Recommends fixes and points of contact."
+            "Text summarisation and RAG over the status dictionary, tickets and Slack.",
+            "Recommends fixes and points of contact.",
+            "Reduced support investigation time by about 40%."
           ]
         },
         {
@@ -477,6 +750,25 @@ window.PORTFOLIO = {
             "Redesigned the front-end panel to query the database layer directly from server-side Go, with HTMX partial updates, removing unnecessary API calls.",
             "Re-architected authentication by swapping the session manager, which fixed critical security flaws and kept SAML 2.0 and OAuth 2.0 compliance."
           ],
+          "story": [
+            {
+              "h": "The problem",
+              "t": "The monitoring panel made many API calls for every view, adding latency and backend load."
+            },
+            {
+              "h": "What I built",
+              "t": "I redesigned it to query the database layer directly from server-side Go with HTMX partial updates, styled with Tailwind."
+            },
+            {
+              "h": "Security",
+              "t": "I replaced the session manager (icza/session to alexedwards/scs), which fixed critical security flaws while keeping SAML 2.0 and OAuth 2.0 compliance."
+            },
+            {
+              "h": "Result",
+              "t": "Lower backend overhead and latency, and a sounder authentication path."
+            }
+          ],
+          "architecture": {"steps": ["Browser with HTMX", "Go server (session via scs, SAML 2.0 and OAuth 2.0)", "Database layer", "HTML partial returned to the page"], "note": "Server-side Go queries the database directly, so the panel no longer makes extra API calls."},
           "highlights": [
             "Lower backend overhead and latency.",
             "Session manager migration for security."
@@ -485,12 +777,12 @@ window.PORTFOLIO = {
       ]
     },
     {
-      "title": "Software Engineer",
+      "title": "Application Development Senior Analyst",
       "org": "Accenture",
       "client": "Warner Bros. Discovery (WBD)",
       "team": "Recommendation Engine",
       "location": "Bengaluru",
-      "period": "",
+      "period": "Jan 2022 - Feb 2024",
       "summary": "Built recommendation features for an OTT platform and modernised its infrastructure and CI/CD.",
       "items": [
         {
@@ -503,10 +795,25 @@ window.PORTFOLIO = {
             "AWS"
           ],
           "details": [
-            "Built several features of a recommendation platform using Amazon Personalize and an in-house ML platform: Top 10, RFY, YAML-based configuration, data pinning and hero banner pages."
+            "Contributed high-impact features to a scalable OTT recommendation engine using Amazon Personalize and an in-house ML platform: Top 10, Recommended For You, YAML-based configuration, data pinning, hero banner and personalised banner pages."
           ],
+          "story": [
+            {
+              "h": "The problem",
+              "t": "The OTT app needed personalised rows and curated placements to keep viewers watching."
+            },
+            {
+              "h": "What I built",
+              "t": "Top 10, Recommended For You, YAML-based configuration, data pinning and hero banner pages, using Amazon Personalize and an in-house ML platform, in Java and Go."
+            },
+            {
+              "h": "Result",
+              "t": "Increased average session time in the app by about 30 minutes."
+            }
+          ],
+          "architecture": {"steps": ["Viewer in the OTT app", "Go microservices on AWS", "Amazon Personalize and in-house ML platform", "Top 10, RFY, pinned rows and hero banners"], "note": "Rows are driven by YAML-based configuration, with data pinning for curated placements."},
           "highlights": [
-            "Increased customer retention in the app by 30 minutes."
+            "Increased average session time in the app by 30 minutes."
           ]
         },
         {
@@ -520,11 +827,26 @@ window.PORTFOLIO = {
             "CircleCI"
           ],
           "details": [
-            "Led the move from ECS to Kubernetes on EKS and from CircleCI to GitHub Actions, with infrastructure managed as code in Pulumi.",
+            "Led the transition of Go microservices from ECS to Kubernetes on EKS and from CircleCI to GitHub Actions for CI/CD pipeline modernisation, with infrastructure managed as code in Pulumi.",
             "Contributed across the full SDLC: development, complex bug fixes, unit tests and production deployments through CI/CD."
           ],
+          "story": [
+            {
+              "h": "The problem",
+              "t": "Services ran on ECS with CircleCI pipelines, which limited scaling control and made infrastructure harder to reproduce."
+            },
+            {
+              "h": "What I did",
+              "t": "I led the move from ECS to Kubernetes on EKS and from CircleCI to GitHub Actions, with infrastructure managed as code in Pulumi, and contributed across the SDLC: development, complex bug fixes, unit tests and production deployments."
+            },
+            {
+              "h": "Result",
+              "t": "A microservice platform on EC2, ECS, EKS, S3 and Lambda with repeatable CI/CD."
+            }
+          ],
+          "architecture": {"steps": ["Code pushed to GitHub", "GitHub Actions CI/CD", "Container image", "Kubernetes on EKS"], "note": "Moved from ECS and CircleCI; infrastructure is defined as code in Pulumi."},
           "highlights": [
-            "Microservice architecture on EC2, ECS, EKS, S3 and Lambda."
+            "Microservice architecture in Go on EC2, ECS, EKS, S3 and Lambda, with Pulumi, CircleCI and GitHub."
           ]
         }
       ]
@@ -651,6 +973,19 @@ window.PORTFOLIO = {
       "url": "https://www.credly.com/badges/ebf74f5d-cc3f-4b09-bf71-66183fcdfaef"
     }
   ],
+  "devHighlight": {
+    "badge": "Software engineering experience",
+    "title": "Backend and cloud engineering",
+    "intro": "The foundation under my AI work. I build scalable, event-driven backends and the pipelines, observability and APIs around them.",
+    "points": [
+      "Supply Chain Monitoring (WBD): event-driven services on AWS Lambda, ECS and Kinesis, a Go and HTMX monitoring UI, a Go audit connector from Kafka to SNS, and a Java 17 CDC service on Debezium.",
+      "Automation that saved real time: MongoDB-to-S3 archiving (1.8 million records removed, about 20 hours saved each quarter) and a reusable backfill API (about 20 hours saved per backfill).",
+      "Tags API: designed from scratch, moved from Lambda to ECS with sqs-consumer, and helped identify 100% of problematic events in real time.",
+      "OTT Recommendations (WBD): Top 10, Recommended For You, pinning and hero banners on Amazon Personalize, up 30 minutes in average session time, plus the move from ECS to EKS and CircleCI to GitHub Actions.",
+      "Vertex O-Series: event-driven AuthZ custom roles sync, REST V3 APIs with a reusable AST-based filtering framework, and a shared OpenTelemetry and Datadog observability library.",
+      "Full SDLC in Agile Scrum teams: requirements, development, unit, integration and end-to-end tests, and production deployment through CI/CD."
+    ]
+  },
   "aiHighlight": {
     "title": "AI engineering",
     "intro": "My current focus. I design the systems around AI agents: how they are evaluated, grounded, secured and deployed.",

@@ -335,3 +335,10 @@ button.btn { font: inherit; font-weight: 500; cursor: pointer; }
   a { color: #000; }
   .icon-row a[href^="http"]::after, .icon-row a[href^="mailto"]::after { content: " (" attr(href) ")"; font-size: 9pt; }
 }
+
+.arch { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem; margin: 0.4rem 0 0.8rem; }
+.arch-step {
+  padding: 0.45rem 0.7rem; border: 1px solid var(--accent); border-radius: 8px;
+  background: var(--surface); font-size: 0.85rem;
+}
+.arch-arrow { color: var(--accent); font-weight: 700; }

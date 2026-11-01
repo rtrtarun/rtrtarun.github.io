@@ -49,6 +49,14 @@
     ai.appendChild(bullets(d.aiHighlight.points));
     $("about-body").appendChild(ai);
   }
+  if (d.devHighlight) {
+    var dev = el("aside", "ai-box");
+    dev.appendChild(el("span", "ai-badge", d.devHighlight.badge));
+    dev.appendChild(el("h3", null, d.devHighlight.title));
+    dev.appendChild(el("p", null, d.devHighlight.intro));
+    dev.appendChild(bullets(d.devHighlight.points));
+    $("about-body").appendChild(dev);
+  }
 
   var workItems = d.experience.reduce(function (n, r) { return n + r.items.length; }, 0);
   var clients = {};
@@ -84,6 +92,16 @@
         b.appendChild(el("h4", null, st.h));
         b.appendChild(el("p", null, st.t));
       });
+      if (item.architecture) {
+        b.appendChild(el("h4", null, "Architecture"));
+        var flow = el("div", "arch");
+        item.architecture.steps.forEach(function (st, k) {
+          if (k) flow.appendChild(el("span", "arch-arrow", "→"));
+          flow.appendChild(el("span", "arch-step", st));
+        });
+        b.appendChild(flow);
+        if (item.architecture.note) b.appendChild(el("p", "muted", item.architecture.note));
+      }
       b.appendChild(el("h4", null, item.story ? "Key contributions" : "What I did"));
       b.appendChild(bullets(item.highlights));
       b.appendChild(chips(item.tags));
