@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme {
+  --font-mono: "Fira Code", ui-monospace, monospace;
+  --font-sans: "Space Grotesk", system-ui, sans-serif;
+  --color-void: #02040a;
+  --color-gold: #ffb840;
+  --color-cyan: #38bdf8;
+}
+
+html, body { background: var(--page-bg, #02040a); color: var(--page-fg, #cfe3ff); font-family: var(--font-sans); overflow-x: hidden; transition: background-color .4s, color .4s; }
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+.glass {
+  background: linear-gradient(135deg, rgba(8,18,38,.84), rgba(6,10,22,.78));
+  border: 1px solid rgba(140,190,255,.18);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 0 40px rgba(56,189,248,.06);
+}
+.scanlines::after {
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 40;
+  background: repeating-linear-gradient(to bottom, rgba(255,255,255,.025) 0 1px, transparent 1px 3px);
+  mix-blend-mode: overlay;
+}
+
+/* UI accent per palette. --g = warm accent (text-gold), --c = cool accent (text-cyan). */
+html[data-palette]            { --g: #ffb840; --c: #38bdf8; }
+html[data-palette="forest"]   { --g: #d9c35a; --c: #4ade80; }
+html[data-palette="violet"]   { --g: #ff9ad5; --c: #a78bfa; }
+html[data-palette="ocean"]    { --g: #5eead4; --c: #38bdf8; }
+html[data-palette="rose"]     { --g: #ffc27a; --c: #fb7185; }
+html[data-palette="amber"]    { --g: #ff7a3d; --c: #fbbf24; }
+html[data-palette]            { --color-gold: var(--g); --color-cyan: var(--c); }
+
+/* ---- Light theme: flip the neutrals Tailwind utilities use, darken the accents ---- */
+html[data-theme="light"] {
+  --page-bg: #e8eef8; --page-fg: #1e293b;
+  --color-white: #0b1324; --color-black: #ffffff;
+  --color-slate-200: #1e293b; --color-slate-300: #334155; --color-slate-400: #475569;
+  --color-slate-500: #5b6b82; --color-slate-600: #64748b;
+}
+html[data-theme="light"][data-palette] {
+  --color-gold: color-mix(in srgb, var(--g) 58%, #000);
+  --color-cyan: color-mix(in srgb, var(--c) 52%, #000);
+}
+html[data-theme="light"] .glass {
+  background: linear-gradient(135deg, rgba(255,255,255,.86), rgba(240,246,255,.8));
+  border-color: rgba(30,60,110,.18);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.9), 0 8px 30px rgba(30,60,110,.10);
+}
+html[data-theme="light"] .scanlines::after { display: none; }

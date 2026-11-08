@@ -1,7 +1,7 @@
-// Edit this file to update the whole site. Empty period/education/certifications are hidden; TODO marks things to fill in.
-window.PORTFOLIO = {
-  "name": "Tarun Rongali",
-  "role": "AI Engineer",
+// All editable portfolio content. Scenes render straight from this object.
+export const PORTFOLIO = {
+  "name": "Rongali Tarun",
+  "role": "AI Engineer & Full Stack Engineer (SDE)",
   "tagline": "Backend engineer turned AI engineer: agents, MCP, RAG, evals and observability.",
   "about": [
     "AI engineer with about 4 years of experience building agentic systems, RAG and LLM platforms on top of a strong backend base in Python, Go, Java (Spring Boot), Node.js and TypeScript. I work with SQL and NoSQL stores (PostgreSQL, MongoDB, DynamoDB) and deliver event-driven, cloud-native systems on AWS and Azure.",
@@ -12,41 +12,146 @@ window.PORTFOLIO = {
   "photo": "assets/tarun.jpg",
   "bookCallUrl": "",
   "skillInfo": {
-    "Go": { "what": "A fast, simple language from Google, popular for backend services and cloud tools.", "like": "A sturdy delivery van: no frills, starts quickly and carries a lot." },
-    "Java": { "what": "A long-established, strongly typed language that runs almost anywhere and powers many enterprise systems.", "like": "A shipping container: write once, and it fits on any ship." },
-    "TypeScript": { "what": "JavaScript with types, so many mistakes are caught before the code runs.", "like": "A spell-checker for code." },
-    "Node.js": { "what": "Runs JavaScript on servers, good at handling many connections at once.", "like": "A single waiter who never waits at a table, always moving to the next order." },
-    "Python": { "what": "A readable language widely used for scripting, data and AI work.", "like": "A Swiss Army knife that is easy to pick up." },
-    "SQL": { "what": "The language for asking relational databases questions and changing their data.", "like": "Asking a very organised librarian for exactly the books you need." },
-    "Spring Boot": { "what": "A Java framework that sets up a production-ready web service with very little configuration.", "like": "A pre-assembled kitchen: you start cooking instead of building cabinets." },
-    "Hibernate": { "what": "Maps Java objects to database tables so you rarely write SQL by hand.", "like": "A translator between two languages." },
-    "React": { "what": "A library for building user interfaces out of small reusable components.", "like": "Building with LEGO bricks, where each brick manages its own piece of the screen." },
-    "GraphQL": { "what": "An API style where the client asks for exactly the fields it needs.", "like": "Ordering à la carte instead of a fixed set menu." },
-    "AWS": { "what": "Amazon's cloud platform for servers, storage, queues, databases and more.", "like": "Renting power tools by the hour instead of buying a workshop." },
-    "Azure": { "what": "Microsoft's cloud platform, strong in enterprise and hybrid setups.", "like": "A rival workshop with a different layout but the same tools." },
-    "Terraform": { "what": "Describes cloud infrastructure in code, so it can be reviewed and repeated.", "like": "A blueprint that builds the same house every time." },
-    "Kubernetes": { "what": "Runs and heals containers across many machines automatically.", "like": "An air-traffic controller for your containers." },
-    "Docker": { "what": "Packages an app and everything it needs into a container that runs the same everywhere.", "like": "A lunchbox: the meal arrives exactly as packed, wherever you open it." },
-    "Redis": { "what": "An in-memory data store used for caching and fast lookups.", "like": "A sticky note on your monitor: quicker than walking to the filing cabinet." },
-    "Maven": { "what": "A Java build tool that manages dependencies and packages projects.", "like": "A shopping list and assembly line in one." },
-    "Microservices": { "what": "Splitting an application into small services that each do one job and can be deployed on their own.", "like": "A food court of specialist stalls instead of one kitchen doing everything." },
-    "Event-driven architecture": { "what": "Services react to events (something happened) instead of calling each other directly.", "like": "A noticeboard: anyone interested reads the notice, and the poster doesn't need to know who." },
-    "Distributed systems": { "what": "Software spread across many machines that must work together despite delays and failures.", "like": "A relay team where any runner might trip, and the race still has to finish." },
-    "AI agent development": { "what": "Building AI that can plan, call tools and carry out multi-step tasks, not just answer questions.", "like": "Hiring an assistant who can do the errand, not just describe it." },
-    "Agentic workflows": { "what": "Pipelines where AI steps decide what to do next, with checks and guardrails around them.", "like": "A factory line where some stations think for themselves, supervised by a foreman." },
-    "Claude": { "what": "Anthropic's family of AI models, used here for building and evaluating agents.", "like": "A very capable colleague you brief in plain language." },
-    "Claude Code": { "what": "Anthropic's coding agent that works in the terminal and your editor to read, write and test code.", "like": "A pair-programmer who can use the keyboard." },
-    "Kafka": { "what": "A durable stream of events that many systems can read independently.", "like": "A conveyor belt that keeps every parcel, so each team can rewind and re-read." },
-    "PostgreSQL": { "what": "A reliable open-source relational database with rich SQL features.", "like": "A well-run filing cabinet that never loses a document." },
-    "MongoDB": { "what": "A document database that stores flexible JSON-like records.", "like": "A folder of loose notes where each note can look different." },
-    "DynamoDB": { "what": "AWS's managed key-value database that scales with very low latency.", "like": "A coat-check: hand over a ticket and get your item back instantly." },
-    "OpenTelemetry": { "what": "A standard way to collect traces, metrics and logs from running software.", "like": "A flight recorder for every request." },
-    "Datadog": { "what": "A monitoring platform that shows metrics, logs and traces in one place.", "like": "A control-room dashboard for your whole system." },
-    "RAG": { "what": "Retrieval-augmented generation: the model looks up relevant documents before answering.", "like": "An open-book exam instead of answering from memory." },
-    "MCP": { "what": "Model Context Protocol, a standard way for AI models to use tools and data sources.", "like": "A universal plug that lets any AI connect to any tool." },
-    "LangGraph": { "what": "A framework for building stateful, multi-step agents as graphs of steps.", "like": "A flowchart the agent actually follows, with save points." },
-    "Langfuse": { "what": "Tracing, scoring and cost tracking for LLM applications.", "like": "A flight recorder plus a receipt for every agent run." },
-    "LLM evaluation": { "what": "Measuring how good, safe and consistent a language model's answers are.", "like": "Marking a student's answers against an answer key." }
+    "Go": {
+      "what": "A fast, simple language from Google, popular for backend services and cloud tools.",
+      "like": "A sturdy delivery van: no frills, starts quickly and carries a lot."
+    },
+    "Java": {
+      "what": "A long-established, strongly typed language that runs almost anywhere and powers many enterprise systems.",
+      "like": "A shipping container: write once, and it fits on any ship."
+    },
+    "TypeScript": {
+      "what": "JavaScript with types, so many mistakes are caught before the code runs.",
+      "like": "A spell-checker for code."
+    },
+    "Node.js": {
+      "what": "Runs JavaScript on servers, good at handling many connections at once.",
+      "like": "A single waiter who never waits at a table, always moving to the next order."
+    },
+    "Python": {
+      "what": "A readable language widely used for scripting, data and AI work.",
+      "like": "A Swiss Army knife that is easy to pick up."
+    },
+    "SQL": {
+      "what": "The language for asking relational databases questions and changing their data.",
+      "like": "Asking a very organised librarian for exactly the books you need."
+    },
+    "Spring Boot": {
+      "what": "A Java framework that sets up a production-ready web service with very little configuration.",
+      "like": "A pre-assembled kitchen: you start cooking instead of building cabinets."
+    },
+    "Hibernate": {
+      "what": "Maps Java objects to database tables so you rarely write SQL by hand.",
+      "like": "A translator between two languages."
+    },
+    "React": {
+      "what": "A library for building user interfaces out of small reusable components.",
+      "like": "Building with LEGO bricks, where each brick manages its own piece of the screen."
+    },
+    "GraphQL": {
+      "what": "An API style where the client asks for exactly the fields it needs.",
+      "like": "Ordering à la carte instead of a fixed set menu."
+    },
+    "AWS": {
+      "what": "Amazon's cloud platform for servers, storage, queues, databases and more.",
+      "like": "Renting power tools by the hour instead of buying a workshop."
+    },
+    "Azure": {
+      "what": "Microsoft's cloud platform, strong in enterprise and hybrid setups.",
+      "like": "A rival workshop with a different layout but the same tools."
+    },
+    "Terraform": {
+      "what": "Describes cloud infrastructure in code, so it can be reviewed and repeated.",
+      "like": "A blueprint that builds the same house every time."
+    },
+    "Kubernetes": {
+      "what": "Runs and heals containers across many machines automatically.",
+      "like": "An air-traffic controller for your containers."
+    },
+    "Docker": {
+      "what": "Packages an app and everything it needs into a container that runs the same everywhere.",
+      "like": "A lunchbox: the meal arrives exactly as packed, wherever you open it."
+    },
+    "Redis": {
+      "what": "An in-memory data store used for caching and fast lookups.",
+      "like": "A sticky note on your monitor: quicker than walking to the filing cabinet."
+    },
+    "Maven": {
+      "what": "A Java build tool that manages dependencies and packages projects.",
+      "like": "A shopping list and assembly line in one."
+    },
+    "Microservices": {
+      "what": "Splitting an application into small services that each do one job and can be deployed on their own.",
+      "like": "A food court of specialist stalls instead of one kitchen doing everything."
+    },
+    "Event-driven architecture": {
+      "what": "Services react to events (something happened) instead of calling each other directly.",
+      "like": "A noticeboard: anyone interested reads the notice, and the poster doesn't need to know who."
+    },
+    "Distributed systems": {
+      "what": "Software spread across many machines that must work together despite delays and failures.",
+      "like": "A relay team where any runner might trip, and the race still has to finish."
+    },
+    "AI agent development": {
+      "what": "Building AI that can plan, call tools and carry out multi-step tasks, not just answer questions.",
+      "like": "Hiring an assistant who can do the errand, not just describe it."
+    },
+    "Agentic workflows": {
+      "what": "Pipelines where AI steps decide what to do next, with checks and guardrails around them.",
+      "like": "A factory line where some stations think for themselves, supervised by a foreman."
+    },
+    "Claude": {
+      "what": "Anthropic's family of AI models, used here for building and evaluating agents.",
+      "like": "A very capable colleague you brief in plain language."
+    },
+    "Claude Code": {
+      "what": "Anthropic's coding agent that works in the terminal and your editor to read, write and test code.",
+      "like": "A pair-programmer who can use the keyboard."
+    },
+    "Kafka": {
+      "what": "A durable stream of events that many systems can read independently.",
+      "like": "A conveyor belt that keeps every parcel, so each team can rewind and re-read."
+    },
+    "PostgreSQL": {
+      "what": "A reliable open-source relational database with rich SQL features.",
+      "like": "A well-run filing cabinet that never loses a document."
+    },
+    "MongoDB": {
+      "what": "A document database that stores flexible JSON-like records.",
+      "like": "A folder of loose notes where each note can look different."
+    },
+    "DynamoDB": {
+      "what": "AWS's managed key-value database that scales with very low latency.",
+      "like": "A coat-check: hand over a ticket and get your item back instantly."
+    },
+    "OpenTelemetry": {
+      "what": "A standard way to collect traces, metrics and logs from running software.",
+      "like": "A flight recorder for every request."
+    },
+    "Datadog": {
+      "what": "A monitoring platform that shows metrics, logs and traces in one place.",
+      "like": "A control-room dashboard for your whole system."
+    },
+    "RAG": {
+      "what": "Retrieval-augmented generation: the model looks up relevant documents before answering.",
+      "like": "An open-book exam instead of answering from memory."
+    },
+    "MCP": {
+      "what": "Model Context Protocol, a standard way for AI models to use tools and data sources.",
+      "like": "A universal plug that lets any AI connect to any tool."
+    },
+    "LangGraph": {
+      "what": "A framework for building stateful, multi-step agents as graphs of steps.",
+      "like": "A flowchart the agent actually follows, with save points."
+    },
+    "Langfuse": {
+      "what": "Tracing, scoring and cost tracking for LLM applications.",
+      "like": "A flight recorder plus a receipt for every agent run."
+    },
+    "LLM evaluation": {
+      "what": "Measuring how good, safe and consistent a language model's answers are.",
+      "like": "Marking a student's answers against an answer key."
+    }
   },
   "contact": {
     "formUrl": "",
@@ -76,6 +181,9 @@ window.PORTFOLIO = {
     "LangGraph",
     "Langfuse",
     "Python",
+    "Java",
+    "Golang",
+    "React",
     "Azure",
     "Terraform",
     "Observability"
@@ -490,7 +598,7 @@ window.PORTFOLIO = {
       ]
     },
     {
-      "title": "Application Development Senior Analyst",
+      "title": "Application Development Analyst",
       "org": "Accenture",
       "client": "Warner Bros. Discovery (WBD)",
       "team": "Digital Supply Chain Overview",
@@ -501,18 +609,50 @@ window.PORTFOLIO = {
         {
           "title": "Event-driven Microservices & Integrations",
           "summary": "Serverless and containerised services that connect many applications and improve cross-team observability.",
-          "tags": ["Node.js", "TypeScript", "Java", "Go", "MongoDB", "AWS Lambda", "AWS SAM", "ECS", "EC2", "S3"],
+          "tags": [
+            "Node.js",
+            "TypeScript",
+            "Java",
+            "Go",
+            "MongoDB",
+            "AWS Lambda",
+            "AWS SAM",
+            "ECS",
+            "EC2",
+            "S3"
+          ],
           "details": [
             "Built and deployed event-driven microservices in Java, Go, Node.js and TypeScript on AWS Lambda (with AWS SAM), ECS and EC2, backed by MongoDB, to integrate multiple applications and improve cross-team observability.",
             "Designed architectures that integrate databases and SDS, integrated third-party APIs, and wrote custom Node.js scripts to correct and transform data against changing requirements."
           ],
           "story": [
-            { "h": "The problem", "t": "The supply chain data came from many systems and destinations, each with its own events. Teams had no single view, and fixing bad data meant ad hoc scripts." },
-            { "h": "What I built", "t": "Event-driven microservices that bring those systems together, using serverless workflows on Lambda and SAM where the load was spiky and ECS or EC2 where services needed to run continuously. I integrated third-party APIs and wrote Node.js transformation scripts to correct data to dynamic requirements." },
-            { "h": "Scope", "t": "Work ranged from small utilities to large backend API services, always on cloud-native, scalable architecture, with services managed for high availability and operational resilience." },
-            { "h": "How we worked", "t": "Requirements gathering through end-to-end development, complex bug fixes, unit tests and production deployment via CI/CD, with sprint planning and issue tracking in Jira under Scrum." }
+            {
+              "h": "The problem",
+              "t": "The supply chain data came from many systems and destinations, each with its own events. Teams had no single view, and fixing bad data meant ad hoc scripts."
+            },
+            {
+              "h": "What I built",
+              "t": "Event-driven microservices that bring those systems together, using serverless workflows on Lambda and SAM where the load was spiky and ECS or EC2 where services needed to run continuously. I integrated third-party APIs and wrote Node.js transformation scripts to correct data to dynamic requirements."
+            },
+            {
+              "h": "Scope",
+              "t": "Work ranged from small utilities to large backend API services, always on cloud-native, scalable architecture, with services managed for high availability and operational resilience."
+            },
+            {
+              "h": "How we worked",
+              "t": "Requirements gathering through end-to-end development, complex bug fixes, unit tests and production deployment via CI/CD, with sprint planning and issue tracking in Jira under Scrum."
+            }
           ],
-          "architecture": {"steps": ["Source applications and third-party APIs", "Events", "Lambda (AWS SAM) and ECS or EC2 services", "MongoDB", "Cross-team observability"], "note": "Serverless where load is spiky, containers where services run continuously."},
+          "architecture": {
+            "steps": [
+              "Source applications and third-party APIs",
+              "Events",
+              "Lambda (AWS SAM) and ECS or EC2 services",
+              "MongoDB",
+              "Cross-team observability"
+            ],
+            "note": "Serverless where load is spiky, containers where services run continuously."
+          },
           "highlights": [
             "Improved cross-team observability by integrating many applications through events.",
             "Contributed to the full SDLC, from requirements to production deployment through CI/CD.",
@@ -545,7 +685,15 @@ window.PORTFOLIO = {
               "t": "1.8 million records were removed from MongoDB collections and the manual effort of about 20 hours every three months disappeared."
             }
           ],
-          "architecture": {"steps": ["MongoDB collections", "Step Functions workflow", "Amazon S3 archive", "Records removed from MongoDB"], "note": "Historical records are archived to S3 first, then removed, keeping collections lean."},
+          "architecture": {
+            "steps": [
+              "MongoDB collections",
+              "Step Functions workflow",
+              "Amazon S3 archive",
+              "Records removed from MongoDB"
+            ],
+            "note": "Historical records are archived to S3 first, then removed, keeping collections lean."
+          },
           "highlights": [
             "Removed 1.8 million records from MongoDB collections.",
             "Saves about 20 hours of manual data removal every three months."
@@ -577,7 +725,15 @@ window.PORTFOLIO = {
               "t": "About 20 hours saved every time a backfill is needed, with a repeatable and reviewable process."
             }
           ],
-          "architecture": {"steps": ["Backfill request with defined requirements", "Reusable API (Node.js, TypeScript)", "Transform and correct data", "MongoDB"], "note": "Replaces one-off correction scripts with a single repeatable entry point."},
+          "architecture": {
+            "steps": [
+              "Backfill request with defined requirements",
+              "Reusable API (Node.js, TypeScript)",
+              "Transform and correct data",
+              "MongoDB"
+            ],
+            "note": "Replaces one-off correction scripts with a single repeatable entry point."
+          },
           "highlights": [
             "Saves about 20 hours of manual effort every time a backfill is needed."
           ]
@@ -609,7 +765,15 @@ window.PORTFOLIO = {
               "t": "It helped identify 100% of problematic events in real time, speeding up detection and mitigation."
             }
           ],
-          "architecture": {"steps": ["Tag request (global, group or individual)", "SQS queue", "ECS service with sqs-consumer", "Tag added or deleted"], "note": "The first version ran on AWS Lambda; it moved to ECS with sqs-consumer for reliable queue polling."},
+          "architecture": {
+            "steps": [
+              "Tag request (global, group or individual)",
+              "SQS queue",
+              "ECS service with sqs-consumer",
+              "Tag added or deleted"
+            ],
+            "note": "The first version ran on AWS Lambda; it moved to ECS with sqs-consumer for reliable queue polling."
+          },
           "highlights": [
             "Helped identify 100% of problematic events in real time, speeding up issue detection and mitigation."
           ]
@@ -641,7 +805,16 @@ window.PORTFOLIO = {
               "t": "Audit data reaches the downstream ecosystem in a format every consumer can use."
             }
           ],
-          "architecture": {"steps": ["Kafka Cloud", "Go service on ECS", "Protobuf deserialised to JSON", "SNS topic", "DISCO ecosystem"], "note": "Relays audit messages from Kafka into the downstream ecosystem."},
+          "architecture": {
+            "steps": [
+              "Kafka Cloud",
+              "Go service on ECS",
+              "Protobuf deserialised to JSON",
+              "SNS topic",
+              "DISCO ecosystem"
+            ],
+            "note": "Relays audit messages from Kafka into the downstream ecosystem."
+          },
           "highlights": [
             "Protobuf to JSON transformation.",
             "Delivers audit data to the downstream ecosystem."
@@ -673,7 +846,15 @@ window.PORTFOLIO = {
               "t": "Better compatibility, security and reliability while real-time change streaming kept working."
             }
           ],
-          "architecture": {"steps": ["MongoDB change stream", "Debezium", "Java 17 CDC service", "AWS Kinesis streams"], "note": "Streams real-time data changes to the appropriate Kinesis stream."},
+          "architecture": {
+            "steps": [
+              "MongoDB change stream",
+              "Debezium",
+              "Java 17 CDC service",
+              "AWS Kinesis streams"
+            ],
+            "note": "Streams real-time data changes to the appropriate Kinesis stream."
+          },
           "highlights": [
             "Led the upgrade to Java 17.",
             "Migrated Debezium to its latest stable version for compatibility, security and reliability."
@@ -682,11 +863,22 @@ window.PORTFOLIO = {
         {
           "title": "ELS (Executive Live Stream)",
           "summary": "A live view of supply chain status for executives, built with Java, React and MongoDB.",
-          "tags": ["Java", "React", "MongoDB"],
+          "tags": [
+            "Java",
+            "React",
+            "MongoDB"
+          ],
           "details": [
             "Worked on ELS (Executive Live Stream), a live view for executives built with Java, React.js and MongoDB."
           ],
-          "architecture": {"steps": ["React.js front end", "Java backend", "MongoDB"], "note": "A three-tier live view for executives."},
+          "architecture": {
+            "steps": [
+              "React.js front end",
+              "Java backend",
+              "MongoDB"
+            ],
+            "note": "A three-tier live view for executives."
+          },
           "highlights": [
             "Full-stack work across a Java backend, a React.js front end and MongoDB."
           ]
@@ -729,7 +921,16 @@ window.PORTFOLIO = {
               "t": "It explains blockers, recommends fixes and points users to the right team, reducing support investigation time by about 40%."
             }
           ],
-          "architecture": {"steps": ["User question in natural language", "Prompt engineering and RAG retrieval", "Status dictionary, tickets and Slack", "LLM on AWS Bedrock", "Summary, blockers, fixes and point of contact"], "note": "Retrieval grounds the answer in existing status descriptions and discussions."},
+          "architecture": {
+            "steps": [
+              "User question in natural language",
+              "Prompt engineering and RAG retrieval",
+              "Status dictionary, tickets and Slack",
+              "LLM on AWS Bedrock",
+              "Summary, blockers, fixes and point of contact"
+            ],
+            "note": "Retrieval grounds the answer in existing status descriptions and discussions."
+          },
           "highlights": [
             "Text summarisation and RAG over the status dictionary, tickets and Slack.",
             "Recommends fixes and points of contact.",
@@ -768,7 +969,15 @@ window.PORTFOLIO = {
               "t": "Lower backend overhead and latency, and a sounder authentication path."
             }
           ],
-          "architecture": {"steps": ["Browser with HTMX", "Go server (session via scs, SAML 2.0 and OAuth 2.0)", "Database layer", "HTML partial returned to the page"], "note": "Server-side Go queries the database directly, so the panel no longer makes extra API calls."},
+          "architecture": {
+            "steps": [
+              "Browser with HTMX",
+              "Go server (session via scs, SAML 2.0 and OAuth 2.0)",
+              "Database layer",
+              "HTML partial returned to the page"
+            ],
+            "note": "Server-side Go queries the database directly, so the panel no longer makes extra API calls."
+          },
           "highlights": [
             "Lower backend overhead and latency.",
             "Session manager migration for security."
@@ -777,7 +986,7 @@ window.PORTFOLIO = {
       ]
     },
     {
-      "title": "Application Development Senior Analyst",
+      "title": "Application Development Analyst",
       "org": "Accenture",
       "client": "Warner Bros. Discovery (WBD)",
       "team": "Recommendation Engine",
@@ -811,7 +1020,15 @@ window.PORTFOLIO = {
               "t": "Increased average session time in the app by about 30 minutes."
             }
           ],
-          "architecture": {"steps": ["Viewer in the OTT app", "Go microservices on AWS", "Amazon Personalize and in-house ML platform", "Top 10, RFY, pinned rows and hero banners"], "note": "Rows are driven by YAML-based configuration, with data pinning for curated placements."},
+          "architecture": {
+            "steps": [
+              "Viewer in the OTT app",
+              "Go microservices on AWS",
+              "Amazon Personalize and in-house ML platform",
+              "Top 10, RFY, pinned rows and hero banners"
+            ],
+            "note": "Rows are driven by YAML-based configuration, with data pinning for curated placements."
+          },
           "highlights": [
             "Increased average session time in the app by 30 minutes."
           ]
@@ -844,7 +1061,15 @@ window.PORTFOLIO = {
               "t": "A microservice platform on EC2, ECS, EKS, S3 and Lambda with repeatable CI/CD."
             }
           ],
-          "architecture": {"steps": ["Code pushed to GitHub", "GitHub Actions CI/CD", "Container image", "Kubernetes on EKS"], "note": "Moved from ECS and CircleCI; infrastructure is defined as code in Pulumi."},
+          "architecture": {
+            "steps": [
+              "Code pushed to GitHub",
+              "GitHub Actions CI/CD",
+              "Container image",
+              "Kubernetes on EKS"
+            ],
+            "note": "Moved from ECS and CircleCI; infrastructure is defined as code in Pulumi."
+          },
           "highlights": [
             "Microservice architecture in Go on EC2, ECS, EKS, S3 and Lambda, with Pulumi, CircleCI and GitHub."
           ]
@@ -857,14 +1082,24 @@ window.PORTFOLIO = {
       "title": "Agentic Notification",
       "subtitle": "Attention Orchestration Platform",
       "github": "https://github.com/rtrtarun/Agentic-notification",
-      "demo": "",
+      "demo": "https://rtrtarun.github.io/agentic-notification/",
+      "shots": [
+        { "src": "assets/agentic/overview.png", "caption": "Overview: what needs you now, arrivals by hour, and how many events were held back" },
+        { "src": "assets/agentic/inbox.png", "caption": "Inbox: every event with its priority, and whether it was delivered, held or merged" },
+        { "src": "assets/agentic/timeline.png", "caption": "Activity timeline: what the platform decided about each event, and why" },
+        { "src": "assets/agentic/traces.png", "caption": "Agent traces: each AI agent run step by step, with tokens, cost, retries and the decision on every step" },
+        { "src": "assets/agentic/rules.png", "caption": "Rules and workflows: first match wins, critical rules locked, plus suggestions learned from feedback" },
+        { "src": "assets/agentic/policies.png", "caption": "Priority policies: the deterministic layer that decides what is critical" }
+      ],
       "image": "",
-      "whatItDoes": "An open-core platform that sits above delivery providers like Novu and decides when, where, whether and how someone should be interrupted. Notifications are cheap; human attention is expensive. Built with Go and Java services, React + TypeScript, PostgreSQL, Redis and NATS, and runs locally via Docker Compose.",
+      "whatItDoes": "An open-core platform that sits above delivery providers (email, Slack, Teams, SMS, Novu) and decides when, where, whether and how someone should be interrupted. Notifications are cheap; human attention is expensive. Events arrive from GitHub webhooks and AI agents; each is classified critical, standard or background, then delivered, held for a digest, merged or recorded, always with a stored reason. Two backends (Go and Java 17) share one PostgreSQL schema behind a React + TypeScript console with 15 screens, five themes, nine languages and a no-backend demo mode. Currently at v0.36.0 (milestone 36): the console is live on GitHub Pages and the Go service runs on Render with Neon PostgreSQL; the Java service is built and tested but not hosted yet.",
       "features": [
-        "Four-layer design: deterministic event and policy layer, AI attention intelligence, provider-agnostic delivery, and a feedback layer.",
-        "Critical events (security alerts, P1 incidents, payment failures, outages) bypass AI completely; only Standard and Background events are classified.",
-        "Delivery goes through a NotificationProvider abstraction, with Novu as the first implementation and room for Courier, Knock or custom providers.",
-        "Feedback signals (opened, dismissed, undo, always/never notify, replies) feed future preference learning."
+        "Four-layer design: a deterministic event and policy layer (rules, dedup, threading, attention budget), AI attention intelligence (built-in heuristic, optional Ollama or Claude behind a timeout, rate cap and circuit breaker), delivery through a durable queue with retries and dead letters, and a feedback layer.",
+        "Critical events (security alerts, outages, failed payments) never touch AI, are never merged, muted or delayed, and only a rule can make an event critical, so an agent cannot declare its own event severe. Tests pin this.",
+        "Rules that match payload content (for example attempt > 3), edited at run time with locked critical rules and strict YAML; a rolling attention budget holds extra events for the digest instead of dropping them.",
+        "AgentPulse for AI agents: an events API with trace IDs and telemetry that renders each run as a timeline (tokens, cost, retries, decision per step), an MCP server with four tools, and a dependency-free Python SDK.",
+        "Provider-agnostic delivery: email through SMTP or Novu, Slack, Teams and SMS (mock, HTTP or Amazon SNS), with feedback (opened, dismissed, undo, always, never) turned into suggestions an admin reviews and never applied silently.",
+        "Production basics: sign-in with sessions, CSRF and roles, sign-up with admin approval, versioned Go and Java images on GHCR, Prometheus metrics, Docker Compose and Kubernetes manifests, and CI with golangci-lint, govulncheck and a shared HTTP contract replayed by both services."
       ],
       "stack": [
         "Go",
@@ -873,10 +1108,14 @@ window.PORTFOLIO = {
         "TypeScript",
         "PostgreSQL",
         "Redis",
-        "NATS",
-        "Novu",
+        "MCP",
+        "Python SDK",
         "Docker",
-        "AWS"
+        "Kubernetes",
+        "GitHub Actions",
+        "Neon",
+        "Render",
+        "Novu"
       ],
       "why": "Most notification systems optimise for delivery. This one treats attention as the scarce resource, keeping critical alerts deterministic and using AI only where a wrong call is cheap."
     },
@@ -885,6 +1124,7 @@ window.PORTFOLIO = {
       "subtitle": "Observability proof of concept",
       "github": "https://github.com/rtrtarun/quick-comers-observability-poc",
       "demo": "",
+      "shots": [] as { src: string; caption: string }[],
       "image": "",
       "whatItDoes": "A multi-module Maven project that adds request tracing, context propagation and metrics to a Spring Boot Order Service. A reusable observability-core module provides the tracing and metrics helpers, and the whole setup runs locally with Docker Compose alongside an OpenTelemetry Collector and Prometheus.",
       "features": [
@@ -910,74 +1150,97 @@ window.PORTFOLIO = {
       "title": "Claude Partner Badge - Claude Code",
       "org": "Anthropic",
       "period": "Oct 2026",
+      "about": "Anthropic partner badge for building with Claude Code, Anthropic's agentic coding tool.",
+      "skills": ["Claude Code", "Agentic coding", "MCP", "Prompt engineering"],
       "url": "https://www.credly.com/badges/aaa1eff0-c52e-4f7d-a2b2-dcb985edc647"
     },
     {
       "title": "Add Agents to Gemini Enterprise",
       "org": "Google Cloud",
       "period": "Oct 2026",
+      "about": "Covers adding and connecting AI agents to a Gemini Enterprise deployment.",
+      "skills": ["Gemini Enterprise", "AI agents", "Google Cloud"],
       "url": "https://www.credly.com/badges/ee7586d6-eee2-49c3-a66b-735a2a19af90"
     },
     {
       "title": "Certified Partner Specialist Gemini Enterprise Deployment",
       "org": "Google Cloud",
       "period": "Oct 2026",
+      "about": "Partner specialist credential for deploying Gemini Enterprise for an organisation.",
+      "skills": ["Gemini Enterprise", "Deployment", "Google Cloud", "Google Workspace"],
       "url": "https://www.credly.com/badges/ef0e03cf-912c-40de-9bd3-df53ded7f45c"
     },
     {
       "title": "Deploy Gemini Enterprise with Workspace Data Sources and Model Armor",
       "org": "Google Cloud",
       "period": "Oct 2026",
+      "about": "Connecting Workspace data sources to Gemini Enterprise and protecting it with Model Armor.",
+      "skills": ["Gemini Enterprise", "Google Workspace", "Model Armor", "AI security"],
       "url": "https://www.credly.com/badges/e4c0c7ba-2c29-402c-910b-2a67ae8d3a47"
     },
     {
       "title": "Govern Agent Access with Gemini Enterprise Agent Platform",
       "org": "Google Cloud",
       "period": "Oct 2026",
+      "about": "Controlling who and what AI agents can access on the Gemini Enterprise agent platform.",
+      "skills": ["Agent governance", "Access control", "Gemini Enterprise", "Google Cloud"],
       "url": "https://www.credly.com/badges/0269051a-952f-4955-8d63-95ae45c07d58"
     },
     {
       "title": "Accelerate Development with Antigravity",
       "org": "Google Cloud",
       "period": "Oct 2026",
+      "about": "Using Google Antigravity to speed up software development with AI assistance.",
+      "skills": ["Antigravity", "AI-assisted development", "Google Cloud"],
       "url": "https://www.credly.com/badges/b950f47f-9a27-46ed-9bfe-af1add1962cf"
     },
     {
       "title": "Certified Partner Specialist Gemini Enterprise Agent Development",
       "org": "Google Cloud",
       "period": "Oct 2026",
+      "about": "Partner specialist credential for building custom agents on Gemini Enterprise.",
+      "skills": ["Gemini Enterprise", "AI agents", "Agent Development Kit (ADK)", "Google Cloud"],
       "url": "https://www.credly.com/badges/4c75ca61-6b49-4ba1-84ef-ea0a39ed97e3"
     },
     {
       "title": "Deploy an Agent with Agent Development Kit (ADK)",
       "org": "Google Cloud",
       "period": "Oct 2026",
+      "about": "Building an agent with Google's Agent Development Kit and deploying it.",
+      "skills": ["Agent Development Kit (ADK)", "AI agents", "Deployment", "Google Cloud"],
       "url": "https://www.credly.com/badges/ce3e6899-50ab-4eb1-9c27-fe25856423f7"
     },
     {
       "title": "Evaluate and Improve Agent Development Kit Agents",
       "org": "Google Cloud",
       "period": "Oct 2026",
+      "about": "Measuring ADK agent quality and iterating to improve it.",
+      "skills": ["Agent Development Kit (ADK)", "Agent evaluation", "AI agents", "Google Cloud"],
       "url": "https://www.credly.com/badges/bcf6e770-878d-47ae-a3b0-8b92be43fa04"
     },
     {
       "title": "Claude Certified Architect - Foundations",
       "org": "Anthropic",
       "period": "Oct 2026",
+      "about": "Anthropic certification covering the foundations of designing applications and agents with Claude.",
+      "skills": ["Claude", "LLM application design", "Prompt engineering", "MCP", "AI agents"],
       "url": "https://www.credly.com/badges/83a8a8bd-a020-48cc-bdaf-72f96145a630"
     },
     {
       "title": "Reinvention with Agentic AI",
       "org": "Accenture",
       "period": "Feb 2026",
+      "about": "Accenture credential on reinventing work and systems with agentic AI.",
+      "skills": ["Agentic AI", "Generative AI", "AI strategy"],
       "url": "https://www.credly.com/badges/ebf74f5d-cc3f-4b09-bf71-66183fcdfaef"
     }
   ],
   "devHighlight": {
     "badge": "Software engineering experience",
-    "title": "Backend and cloud engineering",
-    "intro": "The foundation under my AI work. I build scalable, event-driven backends and the pipelines, observability and APIs around them.",
+    "title": "Full-stack and cloud engineering",
+    "intro": "The foundation under my AI work. I build scalable, event-driven backends, the pipelines, observability and APIs around them, and the front ends people use to work with them.",
     "points": [
+      "Frontend and full-stack: ELS (Executive Live Stream) live supply-chain view on Java, React.js and MongoDB; a Go + HTMX monitoring UI with Tailwind and server-side partial updates; a React Native client for DB-Agent; and a React + TypeScript front end on Agentic Notification.",
       "Supply Chain Monitoring (WBD): event-driven services on AWS Lambda, ECS and Kinesis, a Go and HTMX monitoring UI, a Go audit connector from Kafka to SNS, and a Java 17 CDC service on Debezium.",
       "Automation that saved real time: MongoDB-to-S3 archiving (1.8 million records removed, about 20 hours saved each quarter) and a reusable backfill API (about 20 hours saved per backfill).",
       "Tags API: designed from scratch, moved from Lambda to ECS with sqs-consumer, and helped identify 100% of problematic events in real time.",
@@ -997,4 +1260,6 @@ window.PORTFOLIO = {
       "Certified: Claude Certified Architect, Claude Code partner badge, and Google Cloud Gemini Enterprise and Agent Development Kit credentials."
     ]
   }
-};
+}
+
+export type Portfolio = typeof PORTFOLIO

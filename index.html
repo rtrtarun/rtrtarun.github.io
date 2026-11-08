@@ -1,126 +1,19 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Portfolio</title>
-  <meta name="description" content="Personal portfolio">
-  <link rel="stylesheet" href="styles.css">
-  <script>
-    // Apply saved theme before paint to avoid a flash.
-    try { var t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; var p = localStorage.getItem("palette"); if (p) document.documentElement.dataset.palette = p; } catch (e) {}
-  </script>
-</head>
-<body>
-  <header class="nav">
-    <a class="brand" href="#top" id="brand"></a>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#education" id="nav-edu" hidden>Certifications</a>
-      <a href="#" id="nav-resume" hidden target="_blank" rel="noopener">Resume</a>
-      <select id="palette" aria-label="Colour theme" title="Colour theme"></select>
-      <button id="theme" aria-label="Toggle theme">◐</button>
-      <a class="btn small primary" href="#contact">Contact me</a>
-    </nav>
-  </header>
-
-  <main id="top">
-    <section class="hero">
-      <div class="hero-text">
-      <p class="eyebrow" id="role"></p>
-      <h1 id="hero-name"></h1>
-      <p class="lead" id="tagline"></p>
-      <div class="cta">
-        <a class="btn primary" href="#experience">See my work</a>
-        <a class="btn" href="#contact">Get in touch</a>
-        <a class="btn" id="book-hero" hidden target="_blank" rel="noopener">Book a call</a>
-        <a class="btn" id="resume" hidden target="_blank" rel="noopener">Resume</a>
-      </div>
-      <div class="chips hero-tags" id="keywords"></div>
-      <a class="scroll-cue" href="#about">Scroll ↓</a>
-      </div>
-      <img class="portrait" id="portrait" alt="" width="320" height="440" hidden>
-    </section>
-
-    <section id="about">
-      <p class="chapter">Chapter I</p>
-      <h2>Who I am</h2>
-      <div id="about-body"></div>
-      <div class="stats" id="stats"></div>
-    </section>
-
-    <section id="experience">
-      <p class="chapter">Chapter II</p>
-      <h2>Work experience</h2>
-      <p class="muted">Select any piece of work to read what it was and what I did.</p>
-      <div id="experience-body"></div>
-    </section>
-
-    <section id="projects">
-      <p class="chapter">Chapter III</p>
-      <h2>Projects I've built</h2>
-      <div id="projects-body"></div>
-    </section>
-
-    <section id="skills">
-      <p class="chapter">Chapter IV</p>
-      <h2>Skill stack</h2>
-      <div class="skills" id="skills-body"></div>
-    </section>
-
-    <section id="education">
-      <p class="chapter">Chapter V</p>
-      <h2>Certifications</h2>
-      <div class="grid" id="education-body"></div>
-    </section>
-
-    <section id="contact">
-      <p class="chapter">Chapter VI</p>
-      <h2>Reach out to me!</h2>
-      <p class="muted">Discuss a project or just want to say hi? My inbox is open for all.</p>
-      <ul class="facts" id="contact-facts"></ul>
-      <div class="cta">
-        <button class="btn primary" id="open-form" type="button">Send me a message</button>
-        <a class="btn" id="book-call" hidden target="_blank" rel="noopener">Book a call</a>
-      </div>
-      <div class="icon-row" id="contact-body"></div>
-    </section>
-  </main>
-
-  <dialog id="detail" aria-label="Details">
-    <button id="detail-close" aria-label="Close">✕</button>
-    <div id="detail-body"></div>
-  </dialog>
-
-  <dialog id="form-dialog" aria-label="Contact form">
-    <button id="form-close" aria-label="Close">✕</button>
-    <form id="contact-form" novalidate>
-      <h3 class="detail-title">Get in touch</h3>
-      <p class="muted">Fields marked * are required.</p>
-      <div class="form-row">
-        <label>First name *<input name="firstName" required maxlength="60" autocomplete="given-name"></label>
-        <label>Last name *<input name="lastName" required maxlength="60" autocomplete="family-name"></label>
-      </div>
-      <label>Email *<input name="email" type="email" required maxlength="120" autocomplete="email"></label>
-      <label>Phone *<input name="phone" type="tel" required maxlength="30" autocomplete="tel"></label>
-      <label>Reason for connecting *<select name="reason" required id="reason"></select></label>
-      <label>Message<textarea name="message" rows="4" maxlength="2000"></textarea></label>
-      <label class="trap" aria-hidden="true">Leave this field empty<input name="website" tabindex="-1" autocomplete="off"></label>
-      <p class="form-status" id="form-status" role="status"></p>
-      <div class="card-links">
-        <button class="btn primary" type="submit" id="form-send">Send message</button>
-        <button class="btn" type="button" id="form-cancel">Cancel</button>
-      </div>
-    </form>
-  </dialog>
-
-  <footer><span id="footer"></span></footer>
-
-  <script src="content.js"></script>
-  <script src="script.js"></script>
-  <script src="features.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rongali Tarun | AI Engineer &amp; Full Stack Engineer (SDE)</title>
+    <meta name="description" content="Rongali Tarun — AI Engineer & Full Stack Engineer (SDE). An interactive 3D portfolio." />
+    <script>
+      try { var t = localStorage.getItem("theme"); if (t === "light") document.documentElement.dataset.theme = "light"; } catch (e) {}
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500&family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
