@@ -1,7 +1,8 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { PORTFOLIO as P } from '../content'
 import ContactConsole from './ContactConsole'
 import { asset } from '../lib/asset'
+import { lenis } from '../lib/useScrollRig'
 
 type Item = (typeof P.experience)[number]['items'][number]
 
@@ -14,9 +15,14 @@ const Eyebrow = ({ code, title }: { code: string; title: string }) => (
 )
 
 function Modal({ onClose, children, action }: { onClose: () => void; children: React.ReactNode; action?: React.ReactNode }) {
+  // freeze the page's smooth scroll while the popup is open so the wheel only scrolls the popup
+  useEffect(() => {
+    lenis?.stop()
+    return () => lenis?.start()
+  }, [])
   return (
     <div className="pointer-events-auto fixed inset-0 z-50 grid place-items-center bg-black/60 p-4 backdrop-blur-sm" onClick={onClose}>
-      <div className="glass max-h-[85vh] w-full max-w-2xl overflow-y-auto rounded-sm p-6 md:p-8" onClick={(e) => e.stopPropagation()}>
+      <div data-lenis-prevent className="glass max-h-[85vh] w-full max-w-2xl overflow-y-auto overscroll-contain rounded-sm p-6 md:p-8" onClick={(e) => e.stopPropagation()}>
         {children}
         <div className="mt-6 flex flex-wrap items-center gap-6">
           {action}
