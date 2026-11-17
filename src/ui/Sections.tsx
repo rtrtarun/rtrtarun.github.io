@@ -53,9 +53,9 @@ function WorkDetail({ item }: { item: Item }) {
   )
 }
 
-const Wrap = ({ id, children, align = 'left' }: { id: string; children: React.ReactNode; align?: 'left' | 'right' }) => (
-  <section id={id} className={`flex min-h-screen items-center px-5 py-28 md:px-16 ${align === 'right' ? 'justify-end' : ''}`}>
-    <div className="pointer-events-auto w-full max-w-2xl">{children}</div>
+const Wrap = ({ id, children }: { id: string; children: React.ReactNode }) => (
+  <section id={id} className="flex min-h-screen items-center px-5 py-28 md:px-12 lg:px-20">
+    <div className="pointer-events-auto mx-auto w-full max-w-6xl">{children}</div>
   </section>
 )
 
@@ -73,7 +73,7 @@ const Chapter = ({ n, title, note }: { n: string; title: string; note?: string }
 
 function Highlight({ badge, title, intro, points, mark }: { badge: string; title: string; intro: string; points: string[]; mark: string }) {
   return (
-    <div className="glass mt-4 rounded-sm p-6">
+    <div className="glass rounded-sm p-6">
       <span className="font-mono text-[10px] tracking-[0.25em] text-cyan">{badge.toUpperCase()}</span>
       <h3 className="mt-1 text-2xl font-light text-white">{title}</h3>
       <p className="mt-2 text-slate-300">{intro}</p>
@@ -116,8 +116,10 @@ export function Experience() {
           ))}
         </div>
       </div>
-      <Highlight badge="Current focus" mark="◆" {...P.aiHighlight} />
-      <Highlight mark="▮" {...P.devHighlight} />
+      <div className="mt-4 grid gap-4 md:grid-cols-2">
+        <Highlight badge="Current focus" mark="◆" {...P.aiHighlight} />
+        <Highlight mark="▮" {...P.devHighlight} />
+      </div>
 
       <Chapter n="II" title="Work experience" note="Select any piece of work to read what it was and what I did." />
       <div className="mb-3 flex flex-wrap gap-1.5">
@@ -128,18 +130,19 @@ export function Experience() {
           </button>
         ))}
       </div>
+      <div className="grid items-start gap-4 lg:grid-cols-2">
       {P.experience.map((role) => {
         const items = role.items.filter((it) => !tag || it.tags.includes(tag))
         if (!items.length) return null
         return (
-          <div key={role.title + role.period} className="glass mt-4 rounded-sm p-6">
+          <div key={role.title + role.period} className="glass rounded-sm p-6">
             <div className="flex flex-wrap items-baseline justify-between gap-2">
               <h3 className="text-lg text-white">{role.title} <span className="text-slate-500">· {role.org}</span></h3>
               <span className="font-mono text-[11px] text-cyan/80">{role.period}</span>
             </div>
             <p className="mt-1 font-mono text-[10px] tracking-[0.15em] text-gold/80">{[role.client, role.team].filter(Boolean).join(' · ').toUpperCase()}</p>
             <p className="mt-2 text-sm text-slate-400">{role.summary}</p>
-            <div className="mt-4 grid gap-2 sm:grid-cols-2">
+            <div className="mt-4 grid gap-2">
               {items.map((it) => (
                 <button key={it.title} onClick={() => setOpen(it)}
                   className="group rounded-sm border border-white/10 bg-white/[0.02] px-3 py-2 text-left text-sm text-slate-200 transition hover:border-gold/60 hover:bg-gold/5">
@@ -150,6 +153,7 @@ export function Experience() {
           </div>
         )
       })}
+      </div>
       {open && <Modal onClose={() => setOpen(null)}><WorkDetail item={open} /></Modal>}
     </Wrap>
   )
@@ -159,11 +163,12 @@ export function Experience() {
 export function Development() {
   const [shot, setShot] = useState<{ src: string; caption: string } | null>(null)
   return (
-    <Wrap id="development" align="right">
+    <Wrap id="development">
       <Eyebrow code="02" title="THE SYSTEM PIPELINE" />
       <Chapter n="III" title="Projects I've built" />
+      <div className="grid items-start gap-4 lg:grid-cols-2">
       {P.projects.map((pr, i) => (
-        <article key={pr.title} className="glass mt-4 rounded-sm border-l-2 border-l-gold/70 p-6">
+        <article key={pr.title} className="glass rounded-sm border-l-2 border-l-gold/70 p-6">
           <p className="font-mono text-[10px] tracking-[0.25em] text-gold">{String(i + 1).padStart(2, '0')} / {String(P.projects.length).padStart(2, '0')}</p>
           <h3 className="text-xl text-white">{pr.title} <span className="text-slate-500">· {pr.subtitle}</span></h3>
           <p className="mt-2 text-sm text-slate-300">{pr.whatItDoes}</p>
@@ -188,6 +193,7 @@ export function Development() {
           </div>
         </article>
       ))}
+      </div>
       {shot && (
         <Modal onClose={() => setShot(null)}>
           <img src={asset(shot.src)} alt={shot.caption} className="w-full rounded-sm border border-white/10" />
@@ -206,6 +212,7 @@ export function Labs() {
   return (
     <Wrap id="labs">
       <Eyebrow code="03" title="THE EXPERIMENTS" />
+      <div className="grid items-start gap-4 lg:grid-cols-2">
       <div className="glass rounded-sm p-6">
         <p className="font-mono text-[10px] tracking-[0.3em] text-slate-500">CHAPTER IV</p>
         <h2 className="text-3xl font-light text-white">Skill stack</h2>
@@ -227,10 +234,10 @@ export function Labs() {
           </div>
         ))}
       </div>
-      <div className="glass mt-5 rounded-sm p-6">
+      <div className="glass rounded-sm p-6">
         <p className="font-mono text-[10px] tracking-[0.3em] text-slate-500">CHAPTER V</p>
         <h2 className="text-3xl font-light text-white">Certifications</h2>
-        <ul className="mt-3 grid gap-2 sm:grid-cols-2">
+        <ul className="mt-3 grid gap-2">
           {P.certifications.map((c) => (
             <li key={c.title}>
               <button onClick={() => setCert(c)} className="block w-full rounded-sm border border-white/10 px-3 py-2 text-left text-sm text-slate-300 transition hover:border-cyan/60 hover:bg-cyan/5">
@@ -239,6 +246,7 @@ export function Labs() {
             </li>
           ))}
         </ul>
+      </div>
       </div>
       {cert && (
         <Modal
@@ -268,9 +276,9 @@ export function Labs() {
 
 export function Contact() {
   return (
-    <Wrap id="contact" align="right">
+    <Wrap id="contact">
       <Eyebrow code="04" title="CONSOLE" />
-      <ContactConsole />
+      <div className="mx-auto max-w-3xl"><ContactConsole /></div>
     </Wrap>
   )
 }

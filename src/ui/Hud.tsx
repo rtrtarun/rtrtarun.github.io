@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { PORTFOLIO as P } from '../content'
 import { asset } from '../lib/asset'
 import { SECTIONS, useUI } from '../lib/store'
-import { rig } from '../lib/rig'
+import { retrieval } from '../lib/retrieval'
 import { PALETTES, setPalette, setTheme } from '../lib/palettes'
 import { enterSystem, goTo } from '../lib/useScrollRig'
 
@@ -25,19 +25,22 @@ function Panel({ title, children, className = '' }: { title: string; children: R
   )
 }
 
-/** Live telemetry: reads the mutable rig on a timer instead of re-rendering each frame. */
-function Telemetry() {
-  const [t, setT] = useState({ ex: 0, z: 0 })
+/** Live retrieval results: reads the mutable retrieval state on a timer instead of re-rendering each frame. */
+function Retrieval() {
+  const [r, setR] = useState({ query: '', hits: retrieval.hits })
   useEffect(() => {
-    const i = setInterval(() => setT({ ex: rig.explode, z: rig.cz }), 120)
+    const i = setInterval(() => setR({ query: retrieval.query, hits: [...retrieval.hits] }), 150)
     return () => clearInterval(i)
   }, [])
-  const bar = (v: number) => '█'.repeat(Math.round(v * 12)).padEnd(12, '░')
   return (
     <div className="text-slate-300/80">
-      <div>EXPLODE &nbsp;{bar(t.ex)} {(t.ex * 100).toFixed(0)}%</div>
-      <div>CAM.Z &nbsp;&nbsp;&nbsp;{t.z.toFixed(2)}</div>
-      <div>STATE &nbsp;&nbsp;&nbsp;{t.ex > 0.5 ? 'GRAPH.EXPANDED' : 'CORE.SEALED'}</div>
+      <div className="mb-2 truncate text-gold">q: "{r.query}"</div>
+      {r.hits.map((h, i) => (
+        <div key={i} className="flex justify-between gap-2">
+          <span>{h.sim.toFixed(2)} {h.cluster.toLowerCase()}</span>
+          <span className="text-slate-500">{h.label}</span>
+        </div>
+      ))}
     </div>
   )
 }
@@ -45,7 +48,6 @@ function Telemetry() {
 export default function Hud() {
   const section = useUI((s) => s.section)
   const entered = useUI((s) => s.entered)
-  const hovered = useUI((s) => s.hovered)
   const palette = useUI((s) => s.palette)
   const theme = useUI((s) => s.theme)
   const [open, setOpen] = useState(false)
@@ -102,7 +104,7 @@ export default function Hud() {
           src={asset(P.photo)} alt={`Portrait of ${P.name}`}
           className="mb-6 aspect-square w-44 rounded-sm border border-gold/50 object-cover object-top shadow-[0_0_40px_rgba(255,184,64,.25)] md:w-56"
         />
-        <p className="mb-3 font-mono text-xs tracking-[0.35em] text-cyan/80">// INITIALISING CORE</p>
+        <p className="mb-3 font-mono text-xs tracking-[0.35em] text-cyan/80">// RAG.PIPELINE ONLINE</p>
         <h1 className="text-4xl font-light leading-[1.05] tracking-tight text-white md:text-6xl">
           {P.name} <span className="text-gold">//</span>
         </h1>
@@ -124,14 +126,14 @@ export default function Hud() {
 
       {/* side panels */}
       <aside className={`absolute right-5 top-24 hidden w-64 flex-col gap-4 transition-opacity duration-700 md:right-8 ${section === 0 ? 'md:flex' : 'pointer-events-none opacity-0 md:flex'}`}>
-        <Panel title="NEURAL.CORE">
-          <Telemetry />
+        <Panel title="VECTOR.SEARCH · TOP-5">
+          <Retrieval />
         </Panel>
-        <Panel title="MODULES">
+        <Panel title="PIPELINE">
           <ul className="space-y-1 text-slate-300/80">
-            <li>▸ SYSTEM.ARCH <span className="text-cyan">[RINGS]</span></li>
-            <li>▸ ML.LAYER <span className="text-gold">[NODES]</span></li>
-            <li>▸ DATA.STREAM <span className="text-cyan">[ACTIVE]</span></li>
+            <li>▸ EMBED <span className="text-cyan">[CHUNKS]</span></li>
+            <li>▸ RETRIEVE <span className="text-gold">[K=5]</span></li>
+            <li>▸ GENERATE <span className="text-cyan">[CONTEXT]</span></li>
           </ul>
         </Panel>
       </aside>
@@ -162,7 +164,7 @@ export default function Hud() {
           </button>
         </div>
         <div className="hidden text-right text-slate-500 md:block">
-          {hovered ? <span className="text-gold">CORE.LINK ESTABLISHED</span> : 'HOVER THE CORE'}
+          MOVE THE CURSOR TO QUERY
           <div className="mt-1">{entered ? 'SCROLL ↓' : 'LOCKED'}</div>
         </div>
       </footer>

@@ -1,4 +1,4 @@
-import Scene from './scene/Scene'
+import RagField from './ui/RagField'
 import Hud from './ui/Hud'
 import { Contact, Development, Experience, Labs, Landing } from './ui/Sections'
 import { useScrollRig } from './lib/useScrollRig'
@@ -7,9 +7,9 @@ export default function App() {
   useScrollRig()
   return (
     <div className="scanlines">
-      <Scene />
+      <RagField />
       <Hud />
-      {/* Scroll track. Each section's content sits over the fixed 3D canvas; its scroll position drives the camera. */}
+      {/* Scroll track. Each section's content sits over the fixed vector-search canvas. */}
       <main id="scroll-root" className="relative z-10">
         <Landing />
         <Experience />

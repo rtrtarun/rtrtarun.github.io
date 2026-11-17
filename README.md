@@ -1,4 +1,4 @@
-# Rongali Tarun | 3D Portfolio
+# Rongali Tarun | AI Engineering Portfolio
 
 An immersive 3D portfolio: a glass-and-gear AI/software "Core" you scroll into. Built with React, TypeScript, React Three Fiber, custom GLSL shaders, GSAP ScrollTrigger and Lenis.
 

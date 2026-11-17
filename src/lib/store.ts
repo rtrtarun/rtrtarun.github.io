@@ -10,22 +10,18 @@ export const SECTIONS = [
 
 interface UI {
   section: number
-  hovered: boolean
   entered: boolean
   palette: string
   theme: 'dark' | 'light'
   setSection: (n: number) => void
-  setHovered: (h: boolean) => void
   setEntered: (e: boolean) => void
 }
 
 export const useUI = create<UI>((set) => ({
   section: 0,
-  hovered: false,
   entered: false,
   palette: 'core',
   theme: 'dark',
   setSection: (section) => set({ section }),
-  setHovered: (hovered) => set({ hovered }),
   setEntered: (entered) => set({ entered }),
 }))

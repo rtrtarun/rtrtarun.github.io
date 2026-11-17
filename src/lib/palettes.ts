@@ -1,10 +1,9 @@
-import * as THREE from 'three'
 import { useUI } from './store'
 
 export interface Palette {
   id: string
   name: string
-  /** 3D: cool base, cool highlight, warm accent (fed to every shader as uniforms) */
+  /** swatch colours: cool base, cool highlight, warm accent */
   a: string
   b: string
   c: string
@@ -21,20 +20,8 @@ export const PALETTES: Palette[] = [
   { id: 'amber', name: 'Amber', a: '#f59e0b', b: '#fde047', c: '#ff7a3d' },
 ]
 
-/** Shared uniform objects: spread into every ShaderMaterial so one change recolours the whole scene. */
-export const paletteUniforms = {
-  uPA: { value: new THREE.Color() },
-  uPB: { value: new THREE.Color() },
-  uPC: { value: new THREE.Color() },
-  uLight: { value: 0 }, // 0 = dark theme, 1 = light theme
-}
-
-// shaders treat these as final display colours, so skip the sRGB -> linear conversion
-const put = (u: { value: THREE.Color }, hex: string) => u.value.setHex(parseInt(hex.slice(1), 16), THREE.LinearSRGBColorSpace)
-
 export function setPalette(id: string) {
   const p = PALETTES.find((x) => x.id === id) ?? PALETTES[0]
-  put(paletteUniforms.uPA, p.a); put(paletteUniforms.uPB, p.b); put(paletteUniforms.uPC, p.c)
   document.documentElement.dataset.palette = p.id
   try { localStorage.setItem('palette', p.id) } catch { /* private mode */ }
   useUI.setState({ palette: p.id })
@@ -48,7 +35,6 @@ export function initPalette() {
 
 export function setTheme(t: 'dark' | 'light') {
   document.documentElement.dataset.theme = t
-  paletteUniforms.uLight.value = t === 'light' ? 1 : 0
   try { localStorage.setItem('theme', t) } catch { /* private mode */ }
   useUI.setState({ theme: t })
 }
